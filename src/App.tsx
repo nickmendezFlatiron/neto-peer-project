@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './App.css';
 import useHabits from './hooks/useHabits';
 export interface Habit {
