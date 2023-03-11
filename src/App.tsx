@@ -7,9 +7,9 @@ export interface Habit {
   description: string,
   updated_at: string,
   reminderTime: string,
-  dayCount: number
+  dayCount: number,
+  logs: Log[]
 }
-
 export interface Log {
   id: number, 
   habitId: number, 
