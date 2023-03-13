@@ -1,4 +1,4 @@
-import { Habit } from "../../App"
+import { Habit , Log} from "../../App"
 import { HabitCardRoot } from "./HabitCard.styles"
 
 // id: number,
@@ -16,13 +16,15 @@ interface HabitCardProps {
 }
 const HabitCard = ({habit}: HabitCardProps) => {
   
-  const {title, daysTracked , dayCount,   } = habit as {title: string , daysTracked: number, dayCount: number}
+  const {title, daysTracked , dayCount,  id, logs  } = habit as {id:number , title: string , daysTracked: number, dayCount: number, logs: Log[] }
   const daysLeft =  daysTracked - dayCount
 
-
+  const handleClick = () => {
+    console.log("Card Clicked: ",id )
+  }
   return (
     
-    <HabitCardRoot>
+    <HabitCardRoot onClick={handleClick}>
       <h2>{title}</h2>
       <p>{daysLeft} days to go</p>
     </HabitCardRoot>
