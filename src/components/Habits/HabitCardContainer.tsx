@@ -1,6 +1,6 @@
-import {HabitCardContainerRoot} from './HabitCardContainer.styles'
-
-const HabitContainer = () => {
+import { HabitCardContainerRoot } from './HabitCardContainer.styles'
+import { Habit } from '../../App'
+const HabitContainer = (props: {data: Habit[]}) => {
 return (
   <HabitCardContainerRoot>
     
