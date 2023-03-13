@@ -1,8 +1,8 @@
 // import { useState, useEffect } from 'react';
 import './App.css';
-import UserDashboard from './components/UserDashboard/UserDashboard';
+// import UserDashboard from './components/UserDashboard/UserDashboard';
 import useHabits from './hooks/useHabits';
-
+// import HabitCardContainer from './components/Habits/HabitCardContainer';
 export interface Habit {
   id: number;
   title: string;
@@ -30,16 +30,8 @@ function App() {
   const { data } = useHabits();
   console.log(data)
 
-  // useEffect(() => {
-  //   const { data } = useHabits;
-  //   // console.log(data)
-  //   // data.length ? setHabits(data) : null;
-  // }, []);
-
   return (    
-    <div className="App">
-      <UserDashboard data={data} />
-    </div>
+    <UserDashboard data={data} />
   );
 }
 
