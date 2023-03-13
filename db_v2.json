@@ -1,0 +1,58 @@
+{
+  "1": { // user_id
+    "first_name": "Nick",
+    "last_name": "Mendez",
+    "habits": [
+      {
+        "id": 1,
+        "exercise": "Bench Press",
+        "title": "Bench press 3 times a week",
+        "daysTracked": 20,
+        "description": "Build muscle mass and improve overall strength",
+        "start_date": "2023-03-10T10:15:00.000Z",
+        "end_date": "2023-03-30T10:15:00.000Z",
+        "reminderTime": "8:00AM",
+        "dayCount": 17,
+        "logs": [
+          {
+            "created_at": "2022-03-11T10:30:00Z",
+            "weight": 70,
+            "reps": 8,
+            "sets": 3,
+            "total": 1680,
+            "completed": true
+          },
+          {
+            "created_at": "2022-03-12T10:30:00Z",
+            "weight": 20,
+            "reps": 8,
+            "sets": 3,
+            "total": 1680,
+            "completed": true
+          },
+          {
+            "created_at": "2022-03-13T10:30:00Z",
+            "weight": null,
+            "reps": null,
+            "sets": null,
+            "total": null,
+            "completed": false
+          },
+          {
+            "created_at": "2022-03-14T10:30:00Z",
+            "weight": 70,
+            "reps": 8,
+            "sets": 3,
+            "total": 1680,
+            "completed": true
+          }
+        ] 
+      }
+    ]
+  },
+  "2": {
+    "first_name": "Peter",
+    "last_name": "Nguyen",
+    "habits": []
+  }
+}
