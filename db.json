@@ -1,78 +1,77 @@
 {
   "habits": [
     {
-      "id": 1,
-      "title": "Run 5 miles a day",
-      "daysTracked": 42,
-      "description": "Improve cardiovascular endurance and overall fitness",
-      "updated_at": "2023-03-10T08:30:00.000Z",
-      "reminderTime": "6:00AM",
-      "dayCount": 28
-    },
-    {
-      "id": 2,
-      "title": "Strength training 3 times a week",
-      "daysTracked": 31,
-      "description": "Build muscle mass and improve overall strength",
-      "updated_at": "2023-03-10T10:15:00.000Z",
-      "reminderTime": "8:00AM",
-      "dayCount": 17
-    },
-    {
-      "id": 3,
-      "title": "Yoga for flexibility and mindfulness",
-      "daysTracked": 50,
-      "description": "Improve flexibility, relaxation, and mental clarity",
-      "updated_at": "2023-03-10T11:45:00.000Z",
-      "reminderTime": "7:30PM",
-      "dayCount": 38
-    },
-    {
-      "id": 4,
-      "title": "Cycling for cardio and endurance",
-      "daysTracked": 20,
-      "description": "Improve cardiovascular fitness and leg strength",
-      "updated_at": "2023-03-10T14:00:00.000Z",
-      "reminderTime": "6:30AM",
-      "dayCount": 12
-    },
-    {
-      "id": 5,
-      "title": "HIIT workouts for fat burning",
-      "daysTracked": 15,
-      "description": "Burn fat and improve overall fitness",
-      "updated_at": "2023-03-10T16:30:00.000Z",
-      "reminderTime": "5:00PM",
-      "dayCount": 8
-    },
-    {
-      "id": 6,
-      "title": "Swimming for low-impact exercise",
-      "daysTracked": 37,
-      "description": "Improve overall fitness and muscle tone",
-      "updated_at": "2023-03-10T09:45:00.000Z",
-      "reminderTime": "9:00AM",
-      "dayCount": 24
-    },
-    {
-      "id": 7,
-      "title": "Boxing for stress relief",
-      "daysTracked": 28,
-      "description": "Reduce stress and improve overall fitness",
-      "updated_at": "2023-03-10T17:00:00.000Z",
-      "reminderTime": "6:00PM",
-      "dayCount": 18
-    },
-    {
-      "id": 8,
-      "title": "Pilates for core strength and stability",
-      "daysTracked": 60,
-      "description": "Improve core strength, posture, and overall fitness",
-      "updated_at": "2023-03-10T13:15:00.000Z",
-      "reminderTime": "10:00AM",
-      "dayCount": 47
-    }
-  ],
+    "id": 1,
+    "title": "Run 5 miles a day",
+    "daysTracked": 42,
+    "description": "Improve cardiovascular endurance and overall fitness",
+    "updated_at": "2023-03-10T08:30:00.000Z",
+    "reminderTime": "6:00AM",
+    "dayCount": 28
+  },
+  {
+    "id": 2,
+    "title": "Strength training 3 times a week",
+    "daysTracked": 31,
+    "description": "Build muscle mass and improve overall strength",
+    "updated_at": "2023-03-10T10:15:00.000Z",
+    "reminderTime": "8:00AM",
+    "dayCount": 17
+  },
+  {
+    "id": 3,
+    "title": "Yoga for flexibility and mindfulness",
+    "daysTracked": 50,
+    "description": "Improve flexibility, relaxation, and mental clarity",
+    "updated_at": "2023-03-10T11:45:00.000Z",
+    "reminderTime": "7:30PM",
+    "dayCount": 38
+  },
+  {
+    "id": 4,
+    "title": "Cycling for cardio and endurance",
+    "daysTracked": 20,
+    "description": "Improve cardiovascular fitness and leg strength",
+    "updated_at": "2023-03-10T14:00:00.000Z",
+    "reminderTime": "6:30AM",
+    "dayCount": 12
+  },
+  {
+    "id": 5,
+    "title": "HIIT workouts for fat burning",
+    "daysTracked": 15,
+    "description": "Burn fat and improve overall fitness",
+    "updated_at": "2023-03-10T16:30:00.000Z",
+    "reminderTime": "5:00PM",
+    "dayCount": 8
+  },
+  {
+    "id": 6,
+    "title": "Swimming for low-impact exercise",
+    "daysTracked": 37,
+    "description": "Improve overall fitness and muscle tone",
+    "updated_at": "2023-03-10T09:45:00.000Z",
+    "reminderTime": "9:00AM",
+    "dayCount": 24
+  },
+  {
+    "id": 7,
+    "title": "Boxing for stress relief",
+    "daysTracked": 28,
+    "description": "Reduce stress and improve overall fitness",
+    "updated_at": "2023-03-10T17:00:00.000Z",
+    "reminderTime": "6:00PM",
+    "dayCount": 18
+  },
+  {
+    "id": 8,
+    "title": "Pilates for core strength and stability",
+    "daysTracked": 60,
+    "description": "Improve core strength, posture, and overall fitness",
+    "updated_at": "2023-03-10T13:15:00.000Z",
+    "reminderTime": "10:00AM",
+    "dayCount": 47
+  }],
   "logs" : [
     {
       "id": 1,
@@ -249,6 +248,6 @@
       "sets": 0,
       "total": 0,
       "completed": false
-    }
+   }
   ]
 }
