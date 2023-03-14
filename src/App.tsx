@@ -2,7 +2,6 @@
 import './App.css';
 // import UserDashboard from './components/UserDashboard/UserDashboard';
 import useHabits from './hooks/useHabits';
-// import HabitCardContainer from './components/Habits/HabitCardContainer';
 export interface Habit {
   id: number;
   title: string;
@@ -31,7 +30,9 @@ function App() {
   console.log(data)
 
   return (    
-    <UserDashboard data={data} />
+      <div className="App">
+      Hello World
+      </div>
   );
 }
 
