@@ -10,7 +10,7 @@ const fetchHabits = async () => {
 }
 const useHabits = () => {
 
-return useQuery<Habit[]>({
+return useQuery({
   queryKey: ['habits'],
   queryFn: fetchHabits
 })
