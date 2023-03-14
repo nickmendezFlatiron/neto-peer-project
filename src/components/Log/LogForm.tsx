@@ -18,37 +18,40 @@ import * as Yup from 'yup'
 
 
 const LogForm = () => {
-  const submitLogMutation = usePostLogs()
-
-  const formik = useFormik({initialValues: {
-    exercise: '',
-    weight: 0,
-    reps: 0,
-    sets: 0
-  } ,  onSubmit: (values) => {
-    const { reps, weight, sets} = values
-    const total = reps * weight * sets
-
-    const logData = {
-      ...values,
-      habitId: 0,
-      total,
-      created_at: Date.now().toString(),
-      completed: true
-      
-    }
-    submitLogMutation.mutate(logData)
-  }})
-
 return  (
   <LogFormRoot>
-    <FormWrapper>
+    <FormWrapper id="log-form">
       <label>
         Exercise 
         <TextInput 
           id="exercise"
           placeholder="Exercise name here..."
-          type="text"/>
+          type="text"
+          />
+      </label>
+      <label>
+        Weight 
+        <NumberInput
+          id="weight"
+          type="number"
+          min={0}
+          />
+      </label>
+      <label>
+        Reps 
+        <NumberInput
+          id="weight"
+          type="number"
+          min={0}
+        />
+      </label>
+      <label>
+        Sets
+        <NumberInput
+          id="weight"
+          type="number"
+          min={0}
+        />
       </label>
     </FormWrapper>
   </LogFormRoot>
