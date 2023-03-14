@@ -3,6 +3,7 @@ import { Habit } from '../../App'
 import HabitCard from './HabitCard';
 import useHabits from '../../hooks/useHabits';
 
+// create interface for props
 const HabitCardContainer = () => {
   const {data, error, isError} = useHabits()
   if (isError) {
