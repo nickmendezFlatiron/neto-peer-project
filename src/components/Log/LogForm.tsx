@@ -18,15 +18,27 @@ import * as Yup from 'yup'
 
 
 const LogForm = () => {
+
+  const formik = useFormik({initialValues: {
+    exercise: '',
+    weight: 0,
+    reps: 0,
+    sets: 0
+  } ,  onSubmit: (values) => {
+    alert(JSON.stringify(values, null, 2));
+  }})
+
 return  (
   <LogFormRoot>
-    <FormWrapper id="log-form">
+    <FormWrapper id="log-form" onSubmit={formik.handleSubmit}>
       <label>
         Exercise 
         <TextInput 
           id="exercise"
           placeholder="Exercise name here..."
           type="text"
+          // value={formik.initialValues.exercise}
+          onChange={formik.handleChange}
           />
       </label>
       <label>
@@ -35,22 +47,28 @@ return  (
           id="weight"
           type="number"
           min={0}
+          // value={formik.initialValues.weight}
+          onChange={formik.handleChange}
           />
       </label>
       <label>
         Reps 
         <NumberInput
-          id="weight"
+          id="reps"
           type="number"
           min={0}
+          // value={formik.initialValues.reps}
+          onChange={formik.handleChange}
         />
       </label>
       <label>
         Sets
         <NumberInput
-          id="weight"
+          id="sets"
           type="number"
           min={0}
+          // value={formik.initialValues.sets}
+          onChange={formik.handleChange}
         />
       </label>
       <FormButton

@@ -26,6 +26,6 @@ export const TextLabel = styled.label`
 
 `
 export const FormButton = styled.button`
-align-self: center;
+align-self: center
 
 `
