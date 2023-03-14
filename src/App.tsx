@@ -11,7 +11,7 @@ export interface Habit {
   reminderTime: string;
   dayCount: number;
   logs: Log[];
-}
+};
 export interface Log {
   id: number;
   habitId: number;
@@ -22,11 +22,12 @@ export interface Log {
   sets: number;
   total: number;
   completed: boolean;
-}
+};
 
 function App() {
   // const [habits, setHabits] = useState([]);
   const { data } = useHabits();
+  console.log(data)
 
   // useEffect(() => {
   //   const { data } = useHabits;

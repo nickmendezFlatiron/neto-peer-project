@@ -1,11 +1,12 @@
 // import React, { useState } from 'react';
 // import HabitsContainer from '../HabitsContainer';
 // import NewHabitForm from '../NewHabitForm';
-// import { Habit } from '../../App';
+import { Habit } from '../../App';
 
-function UserDashboard(props: { data: any }) {
+
+function UserDashboard(props: { data: Habit[] }) {
   const { data } = props;
-  console.log(data)
+  // console.log(data)
 
 
   return (
