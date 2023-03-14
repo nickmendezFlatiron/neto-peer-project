@@ -27,12 +27,7 @@ function App() {
 
   const {data} = useHabits()
 
-  return (    
-      <div className="App">
-        <LogForm />
-      Hello World
-      </div>
-  );
+  return
 }
 
 export default App;
