@@ -1,5 +1,6 @@
 import './App.css';
 import useHabits from './hooks/useHabits';
+import LogForm from './components/Log/LogForm';
 export interface Habit {
   id: number,
   title: string,
@@ -28,6 +29,7 @@ function App() {
 
   return (    
       <div className="App">
+        <LogForm />
       Hello World
       </div>
   );
