@@ -1,5 +1,5 @@
-import {useQuery} from '@tanstack/react-query'
-import {Habit} from "../App"
+import {useQuery} from '@tanstack/react-query';
+import {Habit} from "../App";
 
 const fetchHabits = async () => {
   const res = await fetch("http://localhost:3000/habits?_embed=logs");
@@ -9,11 +9,10 @@ const fetchHabits = async () => {
   return res.json()
 }
 const useHabits = () => {
-
-return useQuery<Habit[]>({
-  queryKey: ['habits'],
-  queryFn: fetchHabits
-})
+  return useQuery<Habit[]>({
+    queryKey: ['habits'],
+    queryFn: fetchHabits
+  })
 }
 
-export default useHabits
+export default useHabits;
