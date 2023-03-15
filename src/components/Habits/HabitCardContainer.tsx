@@ -4,7 +4,7 @@ import HabitCard from './HabitCard';
 import useHabits from '../../hooks/useHabits';
 
 // create interface for props
-const HabitCardContainer = () => {
+const HabitCardContainer = (props: { data: Habit[] }) => {
   const {data, error, isError} = useHabits()
   if (isError) {
     return <span>Something Went Wrong.</span>
@@ -15,7 +15,7 @@ const HabitCardContainer = () => {
 
 return (
   <HabitCardContainerRoot>
-    {renderCards}
+    { error ? <div>Error Rendering Cards</div> : renderCards}
   </HabitCardContainerRoot>  
 )
 }

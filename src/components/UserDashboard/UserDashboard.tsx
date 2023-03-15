@@ -2,6 +2,7 @@
 // import HabitsContainer from '../HabitsContainer';
 // import NewHabitForm from '../NewHabitForm';
 import { Habit } from '../../App';
+import HabitCardContainer from '../Habits/HabitCardContainer';
 
 
 function UserDashboard(props: { data: Habit[] }) {
@@ -12,11 +13,12 @@ function UserDashboard(props: { data: Habit[] }) {
   return (
     <div className="userDashboard">
       <div className="userContainer">
-        <p className="userName">Hello [user.name]!</p>
+        <p className="userName">Hello [user name]!</p>
       </div>
 
-      {/* <HabitsContainer data={data} />
-      <NewHabitForm /> */}
+      <HabitCardContainer data={data} />
+
+      {/* <NewHabitForm /> */}
     </div>
   );
 }
