@@ -9,18 +9,10 @@ const fetchHabits = async () => {
   return res.json()
 }
 const useHabits = () => {
-<<<<<<< HEAD
   return useQuery({
     queryKey: ['habits'],
     queryFn: fetchHabits
   })
-=======
-
-return useQuery({
-  queryKey: ['habits'],
-  queryFn: fetchHabits
-})
->>>>>>> 02d51e7 (removed type from useQuery)
 }
 
 export default useHabits;

@@ -1,5 +1,6 @@
 // import { useState, useEffect } from 'react';
 import './App.css';
+import LogForm from './components/Log/LogForm';
 // import UserDashboard from './components/UserDashboard/UserDashboard';
 import useHabits from './hooks/useHabits';
 export interface Habit {
