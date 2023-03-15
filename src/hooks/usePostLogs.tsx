@@ -1,5 +1,5 @@
 import {useMutation} from '@tanstack/react-query'
-import { Log } from '../App'
+import { Log } from '../types'
 interface LogData {
 exercise: string,
 created_at: string,

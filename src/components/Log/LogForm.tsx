@@ -1,7 +1,7 @@
 import { LogFormRoot, FormWrapper, TextInput, NumberInput, FormButton } from "./LogForm.styles"
 import { useFormik } from "formik"
 import * as Yup from 'yup'
-import { Log } from "../../App"
+import { Log } from "../../types"
 // {
 //   "exercise": "Squats",
 //   "weight": 50,

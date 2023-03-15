@@ -1,4 +1,4 @@
-import { Habit , Log} from "../../App"
+import { Habit , Log} from "../../types"
 import { HabitCardRoot } from "./HabitCard.styles"
 
 // id: number,

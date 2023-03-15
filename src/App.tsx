@@ -1,40 +1,37 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Outlet } from "react-router-dom";
+// import {useQuery} from '@tanstack/react-query';
 import './App.css';
-import LogForm from './components/Log/LogForm';
-// import UserDashboard from './components/UserDashboard/UserDashboard';
-import useHabits from './hooks/useHabits';
-export interface Habit {
-  id: number;
-  title: string;
-  daysTracked: number;
-  description: string;
-  updated_at: string;
-  reminderTime: string;
-  dayCount: number;
-  logs: Log[];
-};
-export interface Log {
-  id: number;
-  habitId: number;
-  exercise: string;
-  created_at: string;
-  weight: number;
-  reps: number;
-  sets: number;
-  total: number;
-  completed: boolean;
-};
+// import LogForm from './components/Log/LogForm';
+import UserDashboard from './components/UserDashboard/UserDashboard';
+// import useHabits from './hooks/useHabits';
 
-function App() {
-  // const [habits, setHabits] = useState([]);
-  const { data } = useHabits();
-  console.log(data)
+// function App() {
+const App = () => {
+  const [habits, setHabits] = useState([]);
+  const [hasHabitData, setHasHabitData] = useState(false);
+
+  useEffect(() => {
+    const getAllHabits = () => {
+      return fetch("http://localhost:3000/habits?_embed=logs")
+        .then(response => response.json())
+        .then(json => setHabits(json))
+        .then(() => setHasHabitData(true));
+    }
+    getAllHabits();
+  }, []);
+
+  // const { data, isLoading } = useHabits();
+  console.log(habits)
 
   return (    
-      <div className="App">
-        <LogForm />
-      Hello World
-      </div>
+    <div className="App">
+      <Outlet />
+      { !hasHabitData 
+          ? <div>LOADING...</div> 
+          : <UserDashboard data={habits} isLoaded={hasHabitData}/> }
+      {/* <LogForm /> */}
+    </div>
   );
 }
 

@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 // import HabitsContainer from '../HabitsContainer';
 // import NewHabitForm from '../NewHabitForm';
-import { Habit } from '../../App';
+import { Habit } from '../../types';
 
 // export interface Habit {
 // id: number,
