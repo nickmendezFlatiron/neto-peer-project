@@ -16,7 +16,7 @@ const HabitCardContainer = (props: { data: Habit[], isLoaded: boolean }) => {
 
   return (
     <HabitCardContainerRoot>
-      { data.map(habit => <HabitCard key={habit.title} habit={habit} /> }
+      { data.map(habit => <HabitCard key={habit.title} habit={habit} /> )}
     </HabitCardContainerRoot>  
   );
 }
