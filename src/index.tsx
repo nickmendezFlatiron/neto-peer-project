@@ -14,17 +14,8 @@ import App from "./App";
 import Error from './components/Error/Error';
 // import UserDashboard from './components/UserDashboard/UserDashboard';
 import HabitDashboard from './components/HabitDashboard/HabitDashboard';
+import UserDashboard from './components/UserDashboard/UserDashboard';
 
-const tempHabit = {
-  "id": 0,
-  "title": "temp title",
-  "daysTracked": 0,
-  "description": "temp desc",
-  "updated_at": "2023-03-10T08:30:00.000Z",
-  "reminderTime": "0:00AM",
-  "dayCount": 0,
-  "logs": []
-};
 
 const router = createBrowserRouter([
   {
@@ -33,8 +24,12 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
-        path: "/habit",
-        element: <HabitDashboard data={tempHabit} />
+        path: "",
+        element: <UserDashboard />
+      },
+      {
+        path: "/habit/:id",
+        element: <HabitDashboard />
       },
     ],
   },
@@ -49,7 +44,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </React.StrictMode>

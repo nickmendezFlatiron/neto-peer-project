@@ -27,9 +27,9 @@ const App = () => {
   return (    
     <div className="App">
       <Outlet />
-      { !hasHabitData 
+      {/* { !hasHabitData 
           ? <div>LOADING...</div> 
-          : <UserDashboard data={habits} isLoaded={hasHabitData}/> }
+          : <UserDashboard data={habits} isLoaded={hasHabitData}/> } */}
       {/* <LogForm /> */}
     </div>
   );

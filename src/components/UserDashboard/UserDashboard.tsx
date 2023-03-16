@@ -5,12 +5,12 @@ import { Habit } from '../../types';
 import HabitCardContainer from '../Habits/HabitCardContainer';
 
 
-function UserDashboard(props: { data: Habit[], isLoaded: boolean }) {
+function UserDashboard(props: any) {
 // function UserDashboard() {
   const { data, isLoaded } = props;
-  // console.log(data)
 
 
+  return <h2>Hekk</h2>
   return (
     <div className="userDashboard">
       <div className="userContainer">

@@ -1,6 +1,6 @@
 import { Habit , Log} from "../../types"
 import { HabitCardRoot } from "./HabitCard.styles"
-
+import { useNavigate } from "react-router-dom"
 // id: number,
 // title: string,
 // daysTracked: number,
@@ -15,11 +15,12 @@ interface HabitCardProps {
   key: string
 }
 const HabitCard = ({habit}: HabitCardProps) => {
-  
+  const navigate = useNavigate()
   const {title, daysTracked , dayCount,  id, logs  } = habit as {id:number , title: string , daysTracked: number, dayCount: number, logs: Log[] }
   const daysLeft =  daysTracked - dayCount
 
   const handleClick = () => {
+    navigate(`/habit/${id}`)
     console.log("Card Clicked: ",id )
   }
   return (

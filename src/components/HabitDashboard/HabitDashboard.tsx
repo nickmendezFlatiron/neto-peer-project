@@ -1,36 +1,41 @@
-// import React, { useState } from 'react';
-// import HabitsContainer from '../HabitsContainer';
-// import NewHabitForm from '../NewHabitForm';
-import { Habit } from '../../types';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Habit, Log } from '../../types';
+import { useNavigate } from 'react-router-dom';
+import LogForm from '../Log/LogForm';
 
-// export interface Habit {
-// id: number,
-// title: string,
-// daysTracked: number,
-// description: string,
-// updated_at: string,
-// reminderTime: string,
-// dayCount: number,
-// logs: Log[]
-// }
+function HabitDashboard() {
+const [habit, setHabit] = useState<Habit | null>(null)
+const [isFormOpen, toggleFormOpen] = useState(false)
+const {id} = useParams()
+const navigate = useNavigate()
 
-function HabitDashboard(props: { data: Habit }) {
-    const { data } = props;
-    console.log(data)
-  
-  
+const renderLogs = habit?.logs.map((log: Log) => {
+  return <p key={log.created_at}>{log.exercise}</p>
+})
+
+useEffect(()=>{
+  fetch(`http://localhost:3000/habits/${id}?_embed=logs`)
+  .then(r => r.json())
+  .then(habit => {
+    console.log(habit)
+    setHabit(habit) 
+  }
+  )
+},[])
+
+
+ if (!habit) return <h1>Loading...</h1>
+ 
     return (
       <div className="HabitDashboard">
         <div className="habitContainer">
-          <p className="habitName">[habit.title]</p>
-          <p className="habitTimeline">[habit.daysTracked]</p>
+          <p className="habitName">{habit?.title}</p>
+          <p className="habitTimeline">{habit?.daysTracked}</p>
         </div>
-  
-        {/* {habits.log.map((dayLog) => {
-            // log each day
-        })} */}
-        
-        {/* <LogHabitForm /> */}
+        {renderLogs}
+        <button onClick={()=> toggleFormOpen(!isFormOpen)}>New Log</button>
+        {isFormOpen? <LogForm /> : null}
       </div>
     );
   }
