@@ -1,20 +1,30 @@
 import {useQuery} from '@tanstack/react-query';
+import { Habit } from '../types';
 // import {Habit, Log} from "../App";
-
-const fetchHabits = async () => {
-  const res = await fetch("http://localhost:3000/habits?_embed=logs");
-  if(!res.ok) {
-    throw new Error("Fetch for Habits data failed")
-  }
-  return res.json()
+interface Error {
+  message: string;
 }
 
+const fetchHabits = async () => {
+  const res = await fetch("http://localhost:3000/habits?_embed=logs")
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch habits');
+  }
+  const data = await res.json();
+  return data;
+}
 const useHabits = () => {
 
-  return useQuery({
+  return useQuery<Habit[],Error>({
     queryKey: ['habits'],
-    queryFn: fetchHabits
+    queryFn: fetchHabits,
+    onError: (error) => {
+      console.error(error)
+      return {message: error.message}
+    }
   })
+
 }
 
 export default useHabits;

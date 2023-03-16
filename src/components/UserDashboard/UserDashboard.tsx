@@ -8,7 +8,7 @@ function UserDashboard() {
   const habits = useHabits()
 
   if (habits.isLoading) return <h1>Loading...</h1>
-  
+  if (habits.isError) return <h2>{habits.error.message}</h2>
   return( 
     <div>
       <HabitCardContainer data={habits.data}/>
