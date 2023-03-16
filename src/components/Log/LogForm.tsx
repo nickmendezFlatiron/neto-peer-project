@@ -3,23 +3,6 @@ import { useFormik, validateYupSchema } from "formik"
 import usePostLogs from "../../hooks/usePostLogs"
 import * as Yup from 'yup'
 
-// {
-//   "exercise": "Squats",
-//   "weight": 50,
-//   "reps": 10,
-//   "sets": 3,
-// }
-
-// id: number, 
-// exercise: string,
-// created_at: string,
-// weight: number, 
-// reps: number,
-// habitId: number, 
-// sets: number, 
-// total: number,
-// completed: boolean
-
 interface LogFormInputs {
   exercise: string,
     weight: number,
