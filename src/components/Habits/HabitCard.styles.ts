@@ -10,6 +10,7 @@ export const HabitCardRoot = styled.div`
   flex-flow: column nowrap;
   gap: 2rem;
   justify-content: space-around;
+  max-height: 200px;
   padding: 2rem 1rem;
   scale: 1;
   text-align: center;
@@ -17,7 +18,7 @@ export const HabitCardRoot = styled.div`
 
   h2 {
     color: ${COLORS.blue};
-    font-size: 2rem;
+    font-size: 1.65rem;
     margin: 0;
     text-transform: capitalize;
   }
