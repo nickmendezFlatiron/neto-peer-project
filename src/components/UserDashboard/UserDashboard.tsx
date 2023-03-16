@@ -5,13 +5,13 @@ import { useState } from 'react';
 
 function UserDashboard() {
   const [isFormOpen, toggleFormOpen] = useState<boolean>(false)
-  const habits = useHabits()
+  const {isLoading, isError, error, data} = useHabits()
 
-  if (habits.isLoading) return <h1>Loading...</h1>
-  if (habits.isError) return <h2>{habits.error.message}</h2>
+  if (isLoading) return <h1>Loading...</h1>
+  if (isError) return <h2>{error.message}</h2>
   return( 
     <div>
-      <HabitCardContainer data={habits.data}/>
+      <HabitCardContainer data={data}/>
       <button onClick={()=> toggleFormOpen(!isFormOpen)}>New Habit</button>
       {isFormOpen ? <h3>Form Here...</h3> : null}
     </div>
