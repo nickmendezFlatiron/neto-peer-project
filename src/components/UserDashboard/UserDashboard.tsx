@@ -1,3 +1,4 @@
+import { UserDashboardRoot } from './UserDashboard.styles'
 import HabitCardContainer from '../Habits/HabitCardContainer';
 import useHabits from '../../hooks/useHabits';
 import { useState } from 'react';
@@ -9,11 +10,11 @@ function UserDashboard() {
   if (isLoading) return <h1>Loading...</h1>
   if (isError) return <h2>{error.message}</h2>
   return( 
-    <div>
+    <UserDashboardRoot>
       <HabitCardContainer data={data}/>
-      <button onClick={()=> toggleFormOpen(!isFormOpen)}>New Habit</button>
+      <button onClick={()=> toggleFormOpen(!isFormOpen)}>+ New Habit</button>
       {isFormOpen ? <h3>Form Here...</h3> : null}
-    </div>
+    </UserDashboardRoot>
   )
 }
 
