@@ -1,6 +1,7 @@
-import { useMutation } from "@tanstack/react-query";
+import { QueryCache, useMutation } from "@tanstack/react-query";
 import { Habit, Log } from "../types";
 import { useQueryClient } from "@tanstack/react-query";
+import { FetchError } from "../types";
 interface LogData {
   exercise: string;
   created_at: string;
@@ -13,7 +14,7 @@ interface LogData {
 }
 
 const postLogData = async (data: LogData) => {
-  try {
+
     const res = await fetch("http://localhost:3000/logs", {
       method: "POST",
       body: JSON.stringify(data),
@@ -21,31 +22,25 @@ const postLogData = async (data: LogData) => {
         "Content-Type": "application/json",
       },
     });
-    // if (!res.ok) {
-    //  return alert("Error: Log was unsuccessfully created")
-    // }
-    if (res.ok) {
-      return res.json();
-    }
-  } catch {}
+
+   if (!res.ok) {
+    throw new Error("Failed to create new log.");
+   }
+
+   return res.json()
 };
 
 const usePostLogs = () => {
-  const client = useQueryClient({});
+  const client = useQueryClient();
 
   return useMutation({
     mutationFn: postLogData,
     onSuccess: (data: Log) => {
-      console.log("success");
-      const allHabits: any = client.getQueryData(["habits"]);
-      const findHabit = allHabits.find(
-        (habit: Habit) => habit.id === data.habitId
-      );
-      findHabit.logs.push(data);
-      return findHabit;
-    },
-    onError: () => {
-      alert("Error: Log was unsuccessfully created");
+      client.invalidateQueries(['habits'])
+      return data
+    }, onError: (error: FetchError) => {
+      console.error(error);
+      return { message: error.message };
     },
   });
 };

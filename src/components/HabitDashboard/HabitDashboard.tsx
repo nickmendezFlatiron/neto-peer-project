@@ -35,7 +35,7 @@ useEffect(()=>{
         </div>
         {renderLogs}
         <button onClick={()=> toggleFormOpen(!isFormOpen)}>New Log</button>
-        {isFormOpen? <LogForm /> : null}
+        {isFormOpen? <LogForm id={habit.id} habit={habit} setHabit={setHabit}/> : null}
       </div>
     );
   }

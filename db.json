@@ -1,78 +1,79 @@
 {
   "habits": [
     {
-    "id": 1,
-    "title": "Run 5 miles a day",
-    "daysTracked": 42,
-    "description": "Improve cardiovascular endurance and overall fitness",
-    "updated_at": "2023-03-10T08:30:00.000Z",
-    "reminderTime": "6:00AM",
-    "dayCount": 28
-  },
-  {
-    "id": 2,
-    "title": "Strength training 3 times a week",
-    "daysTracked": 31,
-    "description": "Build muscle mass and improve overall strength",
-    "updated_at": "2023-03-10T10:15:00.000Z",
-    "reminderTime": "8:00AM",
-    "dayCount": 17
-  },
-  {
-    "id": 3,
-    "title": "Yoga for flexibility and mindfulness",
-    "daysTracked": 50,
-    "description": "Improve flexibility, relaxation, and mental clarity",
-    "updated_at": "2023-03-10T11:45:00.000Z",
-    "reminderTime": "7:30PM",
-    "dayCount": 38
-  },
-  {
-    "id": 4,
-    "title": "Cycling for cardio and endurance",
-    "daysTracked": 20,
-    "description": "Improve cardiovascular fitness and leg strength",
-    "updated_at": "2023-03-10T14:00:00.000Z",
-    "reminderTime": "6:30AM",
-    "dayCount": 12
-  },
-  {
-    "id": 5,
-    "title": "HIIT workouts for fat burning",
-    "daysTracked": 15,
-    "description": "Burn fat and improve overall fitness",
-    "updated_at": "2023-03-10T16:30:00.000Z",
-    "reminderTime": "5:00PM",
-    "dayCount": 8
-  },
-  {
-    "id": 6,
-    "title": "Swimming for low-impact exercise",
-    "daysTracked": 37,
-    "description": "Improve overall fitness and muscle tone",
-    "updated_at": "2023-03-10T09:45:00.000Z",
-    "reminderTime": "9:00AM",
-    "dayCount": 24
-  },
-  {
-    "id": 7,
-    "title": "Boxing for stress relief",
-    "daysTracked": 28,
-    "description": "Reduce stress and improve overall fitness",
-    "updated_at": "2023-03-10T17:00:00.000Z",
-    "reminderTime": "6:00PM",
-    "dayCount": 18
-  },
-  {
-    "id": 8,
-    "title": "Pilates for core strength and stability",
-    "daysTracked": 60,
-    "description": "Improve core strength, posture, and overall fitness",
-    "updated_at": "2023-03-10T13:15:00.000Z",
-    "reminderTime": "10:00AM",
-    "dayCount": 47
-  }],
-  "logs" : [
+      "id": 1,
+      "title": "Run 5 miles a day",
+      "daysTracked": 42,
+      "description": "Improve cardiovascular endurance and overall fitness",
+      "updated_at": "2023-03-10T08:30:00.000Z",
+      "reminderTime": "6:00AM",
+      "dayCount": 28
+    },
+    {
+      "id": 2,
+      "title": "Strength training 3 times a week",
+      "daysTracked": 31,
+      "description": "Build muscle mass and improve overall strength",
+      "updated_at": "2023-03-10T10:15:00.000Z",
+      "reminderTime": "8:00AM",
+      "dayCount": 17
+    },
+    {
+      "id": 3,
+      "title": "Yoga for flexibility and mindfulness",
+      "daysTracked": 50,
+      "description": "Improve flexibility, relaxation, and mental clarity",
+      "updated_at": "2023-03-10T11:45:00.000Z",
+      "reminderTime": "7:30PM",
+      "dayCount": 38
+    },
+    {
+      "id": 4,
+      "title": "Cycling for cardio and endurance",
+      "daysTracked": 20,
+      "description": "Improve cardiovascular fitness and leg strength",
+      "updated_at": "2023-03-10T14:00:00.000Z",
+      "reminderTime": "6:30AM",
+      "dayCount": 12
+    },
+    {
+      "id": 5,
+      "title": "HIIT workouts for fat burning",
+      "daysTracked": 15,
+      "description": "Burn fat and improve overall fitness",
+      "updated_at": "2023-03-10T16:30:00.000Z",
+      "reminderTime": "5:00PM",
+      "dayCount": 8
+    },
+    {
+      "id": 6,
+      "title": "Swimming for low-impact exercise",
+      "daysTracked": 37,
+      "description": "Improve overall fitness and muscle tone",
+      "updated_at": "2023-03-10T09:45:00.000Z",
+      "reminderTime": "9:00AM",
+      "dayCount": 24
+    },
+    {
+      "id": 7,
+      "title": "Boxing for stress relief",
+      "daysTracked": 28,
+      "description": "Reduce stress and improve overall fitness",
+      "updated_at": "2023-03-10T17:00:00.000Z",
+      "reminderTime": "6:00PM",
+      "dayCount": 18
+    },
+    {
+      "id": 8,
+      "title": "Pilates for core strength and stability",
+      "daysTracked": 60,
+      "description": "Improve core strength, posture, and overall fitness",
+      "updated_at": "2023-03-10T13:15:00.000Z",
+      "reminderTime": "10:00AM",
+      "dayCount": 47
+    }
+  ],
+  "logs": [
     {
       "id": 1,
       "habitId": 1,
@@ -248,6 +249,314 @@
       "sets": 0,
       "total": 0,
       "completed": false
-   }
+    },
+    {
+      "exercise": "Jog",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 0,
+      "total": 0,
+      "created_at": "1678985847161",
+      "completed": true,
+      "id": 17
+    },
+    {
+      "exercise": "Jog",
+      "weight": 1,
+      "reps": 1,
+      "sets": 1,
+      "habitId": 0,
+      "total": 1,
+      "created_at": "1678985865647",
+      "completed": true,
+      "id": 18
+    },
+    {
+      "exercise": "Jog",
+      "weight": 1,
+      "reps": 1,
+      "sets": 1,
+      "habitId": 0,
+      "total": 1,
+      "created_at": "1678986264973",
+      "completed": true,
+      "id": 19
+    },
+    {
+      "exercise": "Jog",
+      "weight": 1,
+      "reps": 1,
+      "sets": 1,
+      "habitId": 0,
+      "total": 1,
+      "created_at": "1678986270617",
+      "completed": true,
+      "id": 20
+    },
+    {
+      "exercise": "",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 0,
+      "total": 0,
+      "created_at": "1678986288189",
+      "completed": true,
+      "id": 21
+    },
+    {
+      "exercise": "",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 0,
+      "total": 0,
+      "created_at": "1678986288826",
+      "completed": true,
+      "id": 22
+    },
+    {
+      "exercise": "",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 0,
+      "total": 0,
+      "created_at": "1678986293021",
+      "completed": true,
+      "id": 23
+    },
+    {
+      "exercise": "Test",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 0,
+      "total": 0,
+      "created_at": "1678986298994",
+      "completed": true,
+      "id": 24
+    },
+    {
+      "exercise": "Test",
+      "weight": 1,
+      "reps": 1,
+      "sets": 1,
+      "habitId": 0,
+      "total": 1,
+      "created_at": "1678986304433",
+      "completed": true,
+      "id": 25
+    },
+    {
+      "exercise": "Test",
+      "weight": 1,
+      "reps": 1,
+      "sets": 1,
+      "habitId": 0,
+      "total": 1,
+      "created_at": "1678986374236",
+      "completed": true,
+      "id": 26
+    },
+    {
+      "exercise": "Test",
+      "weight": 1,
+      "reps": 1,
+      "sets": 1,
+      "habitId": 0,
+      "total": 1,
+      "created_at": "1678986383382",
+      "completed": true,
+      "id": 27
+    },
+    {
+      "exercise": "test",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 0,
+      "total": 0,
+      "created_at": "1678986542137",
+      "completed": true,
+      "id": 28
+    },
+    {
+      "exercise": "rwrtwt",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 0,
+      "total": 0,
+      "created_at": "1678986580341",
+      "completed": true,
+      "id": 29
+    },
+    {
+      "exercise": "rwrtwt",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 1,
+      "total": 0,
+      "created_at": "1678986649500",
+      "completed": true,
+      "id": 30
+    },
+    {
+      "exercise": "debug",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678988160462",
+      "completed": true,
+      "id": 31
+    },
+    {
+      "exercise": "bigtet",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678988268835",
+      "completed": true,
+      "id": 32
+    },
+    {
+      "exercise": "tttt",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678988476514",
+      "completed": true,
+      "id": 33
+    },
+    {
+      "exercise": "teettt",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 2,
+      "total": 0,
+      "created_at": "1678988524507",
+      "completed": true,
+      "id": 34
+    },
+    {
+      "exercise": "twst",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 2,
+      "total": 0,
+      "created_at": "1678992452374",
+      "completed": true,
+      "id": 35
+    },
+    {
+      "exercise": "twst",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 2,
+      "total": 0,
+      "created_at": "1678992453394",
+      "completed": true,
+      "id": 36
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992496253",
+      "completed": true,
+      "id": 37
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992698894",
+      "completed": true,
+      "id": 38
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992729356",
+      "completed": true,
+      "id": 39
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992730098",
+      "completed": true,
+      "id": 40
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992739727",
+      "completed": true,
+      "id": 41
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992740397",
+      "completed": true,
+      "id": 42
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992852494",
+      "completed": true,
+      "id": 43
+    },
+    {
+      "exercise": "test1",
+      "weight": 0,
+      "reps": 0,
+      "sets": 0,
+      "habitId": 7,
+      "total": 0,
+      "created_at": "1678992858752",
+      "completed": true,
+      "id": 44
+    }
   ]
 }

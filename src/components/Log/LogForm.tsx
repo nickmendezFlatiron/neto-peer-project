@@ -1,7 +1,8 @@
 import { LogFormRoot, FormWrapper, TextInput, NumberInput, FormButton } from "./LogForm.styles"
-import { useFormik, validateYupSchema } from "formik"
+import { useFormik } from "formik"
 import usePostLogs from "../../hooks/usePostLogs"
 import * as Yup from 'yup'
+import { Habit, Log } from "../../types"
 
 interface LogFormInputs {
   exercise: string,
@@ -10,8 +11,8 @@ interface LogFormInputs {
     sets: number
 }
 
-const LogForm = () => {
-
+const LogForm = (props: {id: number, habit: Habit, setHabit: React.Dispatch<React.SetStateAction<Habit | null>>}) => {
+  const { id , setHabit, habit} = props
   const submitLogMutation = usePostLogs()
 
   const SignupSchema = Yup.object().shape({
@@ -35,21 +36,25 @@ const LogForm = () => {
     weight: 0,
     reps: 0,
     sets: 0
-  }, 
-  // validateYupSchema: SignupSchema,  
-  onSubmit: (values) => {
+  }, validationSchema: SignupSchema,
+  onSubmit: async (values) => {
     const { reps, weight, sets } = values
     const total = reps * weight * sets
 
     const logData = {
       ...values,
-      habitId: 0,
+      habitId: id,
       total,
       created_at: Date.now().toString(),
       completed: true
 
     }
     submitLogMutation.mutate(logData)
+    const returnedData= submitLogMutation?.data
+
+    const updatedLogs: Log[] = [...habit.logs, returnedData]
+
+    // setHabit(updatedLogs)
   }})
 
 return  (

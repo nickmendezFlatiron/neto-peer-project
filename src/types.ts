@@ -20,3 +20,7 @@ export interface Log {
   total: number;
   completed: boolean;
 }
+
+export interface FetchError {
+  message: string;
+}
