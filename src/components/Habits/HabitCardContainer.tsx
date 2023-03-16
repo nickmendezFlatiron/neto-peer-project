@@ -4,15 +4,9 @@ import HabitCard from './HabitCard';
 import useHabits from '../../hooks/useHabits';
 
 // create interface for props
-const HabitCardContainer = (props: { data: Habit[], isLoaded: boolean }) => {
-  const { data, isLoaded } = props;
-  // const {data, error, isError} = useHabits()
-  if (!isLoaded) {
-    return <span>Oops! Something Went Wrong!</span>
-  }
-  
-  // const renderCards =  data?.map((habit: Habit) => <HabitCard key={habit.title} habit={habit}/>)
-  
+const HabitCardContainer = (props: { data: Habit[] }) => {
+  const { data } = props;
+    
 
   return (
     <HabitCardContainerRoot>

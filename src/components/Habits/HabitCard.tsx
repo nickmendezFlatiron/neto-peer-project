@@ -20,8 +20,7 @@ const HabitCard = ({habit}: HabitCardProps) => {
   const daysLeft =  daysTracked - dayCount
 
   const handleClick = () => {
-    navigate(`/habit/${id}`)
-    console.log("Card Clicked: ",id )
+    navigate(`/habits/${id}`)
   }
   return (
     

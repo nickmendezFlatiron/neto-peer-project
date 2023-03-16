@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom/client';
 import ReactDOM from "react-dom/client";
 import './index.css';
 import {
@@ -12,7 +11,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // Components
 import App from "./App";
 import Error from './components/Error/Error';
-// import UserDashboard from './components/UserDashboard/UserDashboard';
 import HabitDashboard from './components/HabitDashboard/HabitDashboard';
 import UserDashboard from './components/UserDashboard/UserDashboard';
 
@@ -28,7 +26,7 @@ const router = createBrowserRouter([
         element: <UserDashboard />
       },
       {
-        path: "/habit/:id",
+        path: "/habits/:id",
         element: <HabitDashboard />
       },
     ],

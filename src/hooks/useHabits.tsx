@@ -8,7 +8,9 @@ const fetchHabits = async () => {
   }
   return res.json()
 }
+
 const useHabits = () => {
+
   return useQuery({
     queryKey: ['habits'],
     queryFn: fetchHabits
