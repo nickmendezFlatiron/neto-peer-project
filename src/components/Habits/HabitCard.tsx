@@ -1,30 +1,19 @@
-import { Habit , Log} from "../../types"
+import { Habit} from "../../types"
 import { HabitCardRoot } from "./HabitCard.styles"
 import { useNavigate } from "react-router-dom"
-// id: number,
-// title: string,
-// daysTracked: number,
-// description: string,
-// updated_at: string,
-// reminderTime: string,
-// dayCount: number,
-// logs: Log[]
 
 interface HabitCardProps {
   habit: Habit,
-  key: string
+  key: string,
 }
 const HabitCard = ({habit}: HabitCardProps) => {
   const navigate = useNavigate()
-  const {title, daysTracked , dayCount,  id, logs  } = habit as {id:number , title: string , daysTracked: number, dayCount: number, logs: Log[] }
+  const {title, daysTracked , dayCount,  id}: Partial<Habit> = habit 
   const daysLeft =  daysTracked - dayCount
 
-  const handleClick = () => {
-    navigate(`/habits/${id}`)
-  }
   return (
     
-    <HabitCardRoot onClick={handleClick}>
+    <HabitCardRoot onClick={()=> navigate(`/habits/${id}`)}>
       <h2>{title}</h2>
       <p>{daysLeft} days to go</p>
     </HabitCardRoot>

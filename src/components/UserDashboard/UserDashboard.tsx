@@ -1,4 +1,3 @@
-import { Habit } from '../../types';
 import HabitCardContainer from '../Habits/HabitCardContainer';
 import useHabits from '../../hooks/useHabits';
 import { useState } from 'react';

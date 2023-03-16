@@ -1,7 +1,6 @@
 import { HabitCardContainerRoot } from './HabitCardContainer.styles'
 import { Habit } from '../../types';
 import HabitCard from './HabitCard';
-import useHabits from '../../hooks/useHabits';
 
 // create interface for props
 const HabitCardContainer = (props: { data: Habit[] }) => {
