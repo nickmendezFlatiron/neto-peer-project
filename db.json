@@ -722,6 +722,28 @@
       "created_at": "1678994826914",
       "completed": true,
       "id": 59
+    },
+    {
+      "exercise": "big test",
+      "weight": 1000,
+      "reps": 20,
+      "sets": 343,
+      "habitId": 1,
+      "total": 6860000,
+      "created_at": "1678995409070",
+      "completed": true,
+      "id": 60
+    },
+    {
+      "exercise": "Test 33",
+      "weight": 3,
+      "reps": 2,
+      "sets": 3,
+      "habitId": 1,
+      "total": 18,
+      "created_at": "1679002221141",
+      "completed": true,
+      "id": 61
     }
   ]
 }

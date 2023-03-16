@@ -1,3 +1,4 @@
+import HabitForm from '../HabitForm/HabitForm';
 import HabitCardContainer from '../Habits/HabitCardContainer';
 import useHabits from '../../hooks/useHabits';
 import { useState } from 'react';
@@ -12,7 +13,7 @@ function UserDashboard() {
     <div>
       <HabitCardContainer data={data}/>
       <button onClick={()=> toggleFormOpen(!isFormOpen)}>New Habit</button>
-      {isFormOpen ? <h3>Form Here...</h3> : null}
+      {isFormOpen ? <HabitForm /> : null}
     </div>
   )
 }

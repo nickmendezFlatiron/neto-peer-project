@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LogFormRoot = styled.div`
+export const FormRoot = styled.div`
   border-style: solid;
   border-width: 4px;
   display: flex;
@@ -23,6 +23,9 @@ export const NumberInput = styled.input`
 `;
 
 export const TextLabel = styled.label``;
+
+export const TextAreaInput = styled.textarea`
+`
 
 export const FormButton = styled.button`
   align-self: center;

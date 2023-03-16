@@ -1,5 +1,5 @@
 import {
-  LogFormRoot,
+  FormRoot,
   FormWrapper,
   TextInput,
   NumberInput,
@@ -59,8 +59,9 @@ const LogForm = (props: {
     },
   });
 
+    
   return (
-    <LogFormRoot>
+    <FormRoot>
       <FormWrapper id="log-form" onSubmit={formik.handleSubmit}>
         <label>
           Exercise
@@ -107,7 +108,7 @@ const LogForm = (props: {
           Submit
         </FormButton>
       </FormWrapper>
-    </LogFormRoot>
+    </FormRoot>
   );
 };
 
