@@ -30,14 +30,15 @@ const postLogData = async (data: LogData) => {
    return res.json()
 };
 
-const usePostLogs = () => {
+const usePostLogs = (setHabit: React.Dispatch<React.SetStateAction<Habit | null>>, habit: Habit) => {
   const client = useQueryClient();
 
   return useMutation({
     mutationFn: postLogData,
     onSuccess: (data: Log) => {
       client.invalidateQueries(['habits'])
-      return data
+      setHabit({...habit, logs: [...habit.logs , data]})
+      debugger
     }, onError: (error: FetchError) => {
       console.error(error);
       return { message: error.message };

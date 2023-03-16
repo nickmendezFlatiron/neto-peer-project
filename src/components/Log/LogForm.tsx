@@ -13,7 +13,7 @@ interface LogFormInputs {
 
 const LogForm = (props: {id: number, habit: Habit, setHabit: React.Dispatch<React.SetStateAction<Habit | null>>}) => {
   const { id , setHabit, habit} = props
-  const submitLogMutation = usePostLogs()
+  const submitLogMutation = usePostLogs(setHabit, habit)
 
   const SignupSchema = Yup.object().shape({
     exercise: Yup.string()
@@ -49,12 +49,9 @@ const LogForm = (props: {id: number, habit: Habit, setHabit: React.Dispatch<Reac
       completed: true
 
     }
-    submitLogMutation.mutate(logData)
-    const returnedData= submitLogMutation?.data
+    const newLog = await submitLogMutation.mutate(logData)
+    
 
-    const updatedLogs: Log[] = [...habit.logs, returnedData]
-
-    // setHabit(updatedLogs)
   }})
 
 return  (
