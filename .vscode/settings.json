@@ -4,5 +4,11 @@
     "Formik",
     "HIIT",
     "tanstack"
-  ]
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"files.autoSave": "afterDelay",
+"editor.tabSize": 2,
+"editor.formatOnSave": true,
 }

@@ -4,18 +4,18 @@ export const LogFormRoot = styled.div`
   border-style: solid;
   border-width: 4px;
   display: flex;
-justify-content: center;
+  justify-content: center;
 `;
 
 export const FormWrapper = styled.form`
-padding: 20px;
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
 
 export const TextInput = styled.input`
-margin: 10px 5px;
+  margin: 10px 5px;
 `;
 
 export const NumberInput = styled.input`

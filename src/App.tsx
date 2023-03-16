@@ -1,14 +1,12 @@
 import { Outlet } from "react-router-dom";
-import './App.css';
-
+import "./App.css";
 
 const App = () => {
-  
-  return (    
+  return (
     <div className="App">
-      <Outlet />   
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;
