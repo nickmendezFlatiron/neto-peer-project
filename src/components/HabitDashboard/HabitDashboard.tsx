@@ -1,44 +1,72 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { HabitDashboardRoot } from './HabitDashboard.styles';
 import { Habit, Log } from '../../types';
 import LogForm from '../Log/LogForm';
-import { useNavigate } from 'react-router-dom';
+import { Button } from '../Button/Button.styles';
 
-function HabitDashboard() {
-const [habit, setHabit] = useState<Habit | null>(null)
-const [isFormOpen, toggleFormOpen] = useState<boolean>(false)
-const navigate = useNavigate()
-const {id} = useParams()
+const HabitDashboard = () => {
+  const [habit, setHabit] = useState<Habit | null>(null)
+  const [isFormOpen, toggleFormOpen] = useState<boolean>(false)
+  const navigate = useNavigate()
+  const {id} = useParams()
 
-const renderLogs = habit?.logs.map((log: Log) => {
-  return <p key={log.created_at}>{log.exercise}</p>
-})
+  useEffect(()=>{
+    fetch(`http://localhost:3000/habits/${id}?_embed=logs`)
+    .then(resp => resp.json())
+    .then(habit => setHabit(habit))
+  },[id])
+  
+  const renderLogs = habit?.logs.map((log: Log, idx) => {
+    if(!log.completed) return(<tr className="missed" key={log.id}><td>Day {log.exercise}</td><td>-</td><td>-</td><td>-</td></tr>)
+    return (<tr key={log.id}><td>Day {log.exercise}</td><td>{log.weight}</td><td>{log.sets}</td><td>{log.reps}</td></tr>)
+  })
 
-useEffect(()=>{
-  fetch(`http://localhost:3000/habits/${id}?_embed=logs`)
-  .then(r => r.json())
-  .then(habit => {
-    setHabit(habit) 
-  }
-  )
-},[id])
-
-
- if (!habit) return <h1>Loading...</h1>
- 
-    return (
-      <div className="HabitDashboard">
-        <button onClick={()=> navigate(-1)}>Back to Habits</button>
-        <div className="habitContainer">
-          <p className="habitName">{habit?.title}</p>
-          <p className="habitTimeline">Day {habit?.dayCount} of {habit?.daysTracked}</p>
+  if(!habit) return <h1>Loading...</h1>
+  return (
+    <HabitDashboardRoot>
+      <Button className="backBtn" onClick={()=> navigate(-1)}>
+        {`< Back to Habits`}
+      </Button>
+      
+      <div className="habitContainer">
+        <div className="habitName">
+          <span className="habitHeader">Developing Habit: </span>
+          <div className="habitInfo">{habit?.title}</div>
         </div>
-        {renderLogs}
-        <button onClick={()=> toggleFormOpen(!isFormOpen)}>New Log</button>
-        {isFormOpen? <LogForm id={habit.id} habit={habit} setHabit={setHabit}/> : null}
+        <div className="habitDesc">
+          <span className="habitHeader">Habit Motivation:</span>
+          <div className="habitInfo">{habit?.description}</div>
+        </div>
+        <div className="habitProgress">
+          <span className="habitHeader">Habit Progress:</span>
+          <div className="habitInfo">{habit?.dayCount} of {habit?.daysTracked} days completed</div>
+        </div>
+        <div className="habitLogs">
+          <span className="habitHeader">Habit Log:</span>
+          <div className="habitInfo">
+            <table>
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Weight (lbs)</th>
+                  <th>Sets</th>
+                  <th>Reps</th>
+                </tr>
+              </thead>
+              <tbody>
+                {renderLogs}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-    );
-  }
-  
-  
-  export default HabitDashboard;
+      
+      <Button onClick={()=> toggleFormOpen(!isFormOpen)}>+ New Log</Button>
+      {isFormOpen ? <LogForm /> : null}
+    </HabitDashboardRoot>
+  );
+}
+
+export default HabitDashboard;

@@ -14,7 +14,7 @@ import Error from './components/Error/Error';
 import HabitDashboard from './components/HabitDashboard/HabitDashboard';
 import UserDashboard from './components/UserDashboard/UserDashboard';
 
-
+const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,9 +32,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
-const queryClient = new QueryClient()
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
