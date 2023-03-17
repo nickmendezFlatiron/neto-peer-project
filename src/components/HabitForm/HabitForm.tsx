@@ -12,27 +12,45 @@ import { Habit } from "../../types";
 import usePostHabit from "../../hooks/usePostHabit";
 
 const HabitForm = () => {
-  const createHabit = usePostHabit()
+  const createHabit = usePostHabit();
+  const HabitSchema = Yup.object().shape({
+    title: Yup.string()
+      .min(5, "Title is too short.")
+      .max(40, "40-character limit")
+      .required("Required"),
+    description: Yup.string()
+      .min(5, "Description is too short.")
+      .max(200, "200-character limit.")
+      .required("Required"),
+    daysTracked: Yup.number().min(1).required("Required"),
+    reminderTime: Yup.string().required("Required"),
+  });
   const formik = useFormik({
     initialValues: {
       title: "",
       description: "",
-      daysTracked: 0,
+      daysTracked: 1,
       reminderTime: "12:00",
     },
+    validationSchema: HabitSchema,
     onSubmit: async (values: Partial<Habit>) => {
       const habitData = {
         ...values,
         updated_at: Date.now().toString(),
-        dayCount: 1
-      }
-      createHabit.mutate(habitData)
+        dayCount: 1,
+      };
+      createHabit.mutate(habitData);
     },
   });
-
+  const displayError = (input: "title" | "description") => {
+    if (formik.errors[input] && formik.values[input] && formik.touched[input]) {
+      return formik.errors[input];
+    }
+  };
   return (
     <FormRoot>
       <FormWrapper id="habit-form" onSubmit={formik.handleSubmit}>
+        <div></div>
         <label>
           Title
           <TextInput
@@ -42,6 +60,7 @@ const HabitForm = () => {
             onChange={formik.handleChange}
             value={formik.values.title}
           />
+          {displayError('title')}
         </label>
         <label>
           Description
@@ -57,7 +76,7 @@ const HabitForm = () => {
           <NumberInput
             id="daysTracked"
             type="number"
-            min={0}
+            min={1}
             onChange={formik.handleChange}
             value={formik.values.daysTracked}
           />

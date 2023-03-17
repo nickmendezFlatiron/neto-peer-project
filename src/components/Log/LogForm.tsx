@@ -25,7 +25,7 @@ const LogForm = (props: {
   const { id: selectedHabit, setHabit, habit } = props;
   const submitLogMutation = usePostLogs(setHabit, habit);
 
-  const SignupSchema = Yup.object().shape({
+  const LogSchema = Yup.object().shape({
     exercise: Yup.string()
       .min(2, "Too Short!")
       .max(30, "Too Long!")
@@ -42,7 +42,7 @@ const LogForm = (props: {
       reps: 0,
       sets: 0,
     },
-    validationSchema: SignupSchema,
+    validationSchema: LogSchema,
     onSubmit: async (values) => {
       const { reps, weight, sets } = values;
       const total = reps * weight * sets;
