@@ -8,11 +8,10 @@ interface HabitCardProps {
 }
 const HabitCard = ({habit}: HabitCardProps) => {
   const navigate = useNavigate()
-  const {title, daysTracked , dayCount,  id}: Partial<Habit> = habit 
-  const daysLeft =  daysTracked - dayCount
+  const { title, daysTracked , dayCount, id }: Partial<Habit> = habit 
+  const daysLeft = daysTracked - dayCount
 
   return (
-    
     <HabitCardRoot onClick={()=> navigate(`/habits/${id}`)}>
       <h2>{title}</h2>
       <p>{daysLeft} days to go</p>

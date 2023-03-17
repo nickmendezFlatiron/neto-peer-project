@@ -5,7 +5,6 @@ import HabitCard from './HabitCard';
 // create interface for props
 const HabitCardContainer = (props: { data: Habit[] }) => {
   const { data } = props;
-    
 
   return (
     <HabitCardContainerRoot>
