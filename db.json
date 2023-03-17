@@ -71,6 +71,15 @@
       "updated_at": "2023-03-10T13:15:00.000Z",
       "reminderTime": "10:00AM",
       "dayCount": 47
+    },
+    {
+      "title": "Build upper body strength",
+      "description": "Put on size",
+      "daysTracked": 25,
+      "reminderTime": "08:00",
+      "updated_at": "1679064516139",
+      "dayCount": 1,
+      "id": 9
     }
   ],
   "logs": [

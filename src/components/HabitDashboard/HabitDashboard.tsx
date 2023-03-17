@@ -64,7 +64,7 @@ const HabitDashboard = () => {
       </div>
       
       <Button onClick={()=> toggleFormOpen(!isFormOpen)}>+ New Log</Button>
-      {isFormOpen ? <LogForm /> : null}
+      {isFormOpen ? <LogForm id={habit.id} habit={habit} setHabit={setHabit}/> : null}
     </HabitDashboardRoot>
   );
 }

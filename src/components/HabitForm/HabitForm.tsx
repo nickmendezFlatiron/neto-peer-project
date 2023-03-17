@@ -29,7 +29,7 @@ const HabitForm = () => {
     initialValues: {
       title: "",
       description: "",
-      daysTracked: 1,
+      daysTracked: 0,
       reminderTime: "12:00",
     },
     validationSchema: HabitSchema,
