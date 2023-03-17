@@ -56,6 +56,7 @@ const LogForm = (props: {
       };
 
       submitLogMutation.mutate(logData);
+      formik.resetForm()
     },
   });
 
@@ -105,7 +106,7 @@ const LogForm = (props: {
           />
         </label>
         <FormButton form="log-form" type="submit">
-          Submit
+          Create Log
         </FormButton>
       </FormWrapper>
     </FormRoot>

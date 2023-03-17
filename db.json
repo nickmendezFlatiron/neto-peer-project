@@ -80,6 +80,33 @@
       "updated_at": "1679064516139",
       "dayCount": 1,
       "id": 9
+    },
+    {
+      "title": "Get swole legs",
+      "description": "want to squat 400 lbs",
+      "daysTracked": 60,
+      "reminderTime": "10:00",
+      "updated_at": "1679065024815",
+      "dayCount": 1,
+      "id": 10
+    },
+    {
+      "title": "Maurice's fitness habit",
+      "description": "Get big!!!!",
+      "daysTracked": 30,
+      "reminderTime": "12:00",
+      "updated_at": "1679080876189",
+      "dayCount": 1,
+      "id": 11
+    },
+    {
+      "title": "dsfbjdf",
+      "description": "kjbkbjkbj",
+      "daysTracked": 1,
+      "reminderTime": "12:00",
+      "updated_at": "1679082389331",
+      "dayCount": 1,
+      "id": 12
     }
   ],
   "logs": [
@@ -258,6 +285,17 @@
       "sets": 0,
       "total": 0,
       "completed": false
+    },
+    {
+      "exercise": "Squats",
+      "weight": 275,
+      "reps": 10,
+      "sets": 5,
+      "habitId": 10,
+      "total": 13750,
+      "created_at": "1679065044879",
+      "completed": true,
+      "id": 17
     }
   ]
 }

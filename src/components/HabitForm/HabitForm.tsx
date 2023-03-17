@@ -5,6 +5,7 @@ import {
   TextAreaInput,
   FormButton,
   FormRoot,
+  FormGroup,
 } from "../Log/LogForm.styles";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -29,7 +30,7 @@ const HabitForm = () => {
     initialValues: {
       title: "",
       description: "",
-      daysTracked: 0,
+      daysTracked: 1,
       reminderTime: "12:00",
     },
     validationSchema: HabitSchema,
@@ -40,6 +41,7 @@ const HabitForm = () => {
         dayCount: 1,
       };
       createHabit.mutate(habitData);
+      formik.resetForm()
     },
   });
   const displayError = (input: "title" | "description") => {
@@ -50,7 +52,6 @@ const HabitForm = () => {
   return (
     <FormRoot>
       <FormWrapper id="habit-form" onSubmit={formik.handleSubmit}>
-        <div></div>
         <label>
           Title
           <TextInput
@@ -62,15 +63,17 @@ const HabitForm = () => {
           />
           {displayError('title')}
         </label>
-        <label>
-          Description
-          <TextAreaInput
-            id="description"
-            placeholder="What is your motivation?"
-            onChange={formik.handleChange}
-            value={formik.values.description}
-          />
-        </label>
+        <FormGroup>
+          <label htmlFor="">
+            Description
+          </label>
+            <TextAreaInput
+              id="description"
+              placeholder="What is your motivation?"
+              onChange={formik.handleChange}
+              value={formik.values.description}
+            />
+        </FormGroup>
         <label>
           Days to Track
           <NumberInput

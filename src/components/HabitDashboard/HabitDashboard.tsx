@@ -19,7 +19,7 @@ const HabitDashboard = () => {
   },[id])
   
   const renderLogs = habit?.logs.map((log: Log, idx) => {
-    if(!log.completed) return(<tr className="missed" key={log.id}><td>Day {log.exercise}</td><td>-</td><td>-</td><td>-</td></tr>)
+    if(!log.completed) return(<tr className="missed" key={log.id}><td>{log.exercise}</td><td>-</td><td>-</td><td>-</td></tr>)
     return (<tr key={log.id}><td>Day {log.exercise}</td><td>{log.weight}</td><td>{log.sets}</td><td>{log.reps}</td></tr>)
   })
 
@@ -49,7 +49,7 @@ const HabitDashboard = () => {
             <table>
               <thead>
                 <tr>
-                  <th>Day</th>
+                  <th>Exercise</th>
                   <th>Weight (lbs)</th>
                   <th>Sets</th>
                   <th>Reps</th>
@@ -61,10 +61,10 @@ const HabitDashboard = () => {
             </table>
           </div>
         </div>
-      </div>
-      
       <Button onClick={()=> toggleFormOpen(!isFormOpen)}>+ New Log</Button>
       {isFormOpen ? <LogForm id={habit.id} habit={habit} setHabit={setHabit}/> : null}
+      </div>
+      
     </HabitDashboardRoot>
   );
 }
