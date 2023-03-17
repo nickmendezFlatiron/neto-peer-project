@@ -9,8 +9,6 @@ import { Button } from '../Button/Button.styles';
 const HabitDashboard = () => {
   const [habit, setHabit] = useState<Habit | null>(null)
   const [isFormOpen, toggleFormOpen] = useState<boolean>(false)
-  const tempDate = new Date('2020-04-20T11:00:00.000Z');
-  const [prevDay, setPrevDay] = useState<Date | number>(tempDate)
   const navigate = useNavigate()
   const {id} = useParams()
 
@@ -19,36 +17,9 @@ const HabitDashboard = () => {
     .then(resp => resp.json())
     .then(habit => setHabit(habit))
   },[id])
-
-  const isDayAfter = (dayBefore:string, currentDay:string): boolean => {
-    const yesterday = new Date(dayBefore);
-    const today = new Date(currentDay);
-    const nextDay = new Date(dayBefore);
-    nextDay.setDate(nextDay.getDate() + 1);
-    
-    const isSameDay = today.getFullYear() === nextDay.getFullYear() &&
-      today.getMonth() === nextDay.getMonth() &&
-      today.getDate() === nextDay.getDate();
-    
-    if(isSameDay && (yesterday < today)) return true;
-    return false;
-  }
   
   const renderLogs = habit?.logs.map((log: Log, idx) => {
-    console.log(`log date: ${log.created_at}, typeof: ${typeof log.created_at}`);
-    const day = new Date(log.created_at)//.toISOString();
-    console.log(`day: ${day}, typeof: ${typeof day}`);
-    if(idx === 0) {
-      // new Date(day.setDate(day))
-      setPrevDay(day.setDate(day.getDate() - 1))
-    } else {
-      // setPrevDay(new Date(log.created_at))
-      setPrevDay(day)
-    }
-
-    // checks if prevDay < log.created (current day) 
-    const isNextDay = isDayAfter(prevDay, log.created_at);
-    if(!log.completed || !isNextDay) return(<tr className="missed" key={log.id}><td>Day {log.exercise}</td><td>-</td><td>-</td><td>-</td></tr>)
+    if(!log.completed) return(<tr className="missed" key={log.id}><td>Day {log.exercise}</td><td>-</td><td>-</td><td>-</td></tr>)
     return (<tr key={log.id}><td>Day {log.exercise}</td><td>{log.weight}</td><td>{log.sets}</td><td>{log.reps}</td></tr>)
   })
 
@@ -81,8 +52,7 @@ const HabitDashboard = () => {
                   <th>Day</th>
                   <th>Weight (lbs)</th>
                   <th>Sets</th>
-                  {/* <th>Reps</th> */}
-                  <th>{}</th>
+                  <th>Reps</th>
                 </tr>
               </thead>
               <tbody>
@@ -97,7 +67,6 @@ const HabitDashboard = () => {
       {isFormOpen ? <LogForm /> : null}
     </HabitDashboardRoot>
   );
-  }
-  
-  
-  export default HabitDashboard;
+}
+
+export default HabitDashboard;
