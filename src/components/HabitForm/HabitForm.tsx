@@ -7,10 +7,12 @@ import {
   FormRoot,
 } from "../Log/LogForm.styles";
 import { useFormik } from "formik";
-import { Habit } from "../../types";
 import * as Yup from "yup";
+import { Habit } from "../../types";
+import usePostHabit from "../../hooks/usePostHabit";
 
 const HabitForm = () => {
+  const createHabit = usePostHabit()
   const formik = useFormik({
     initialValues: {
       title: "",
@@ -18,8 +20,13 @@ const HabitForm = () => {
       daysTracked: 0,
       reminderTime: "12:00",
     },
-    onSubmit: async (values) => {
-      console.log(values);
+    onSubmit: async (values: Partial<Habit>) => {
+      const habitData = {
+        ...values,
+        updated_at: Date.now().toString(),
+        dayCount: 1
+      }
+      createHabit.mutate(habitData)
     },
   });
 
